@@ -1,0 +1,141 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    --background: 220 14% 97%;
+    --foreground: 240 6% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 6% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 18%;
+    --primary: 270 20% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 97%;
+    --secondary-foreground: 240 6% 18%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 240 5% 50%;
+    --accent: 42 20% 72%;
+    --accent-foreground: 240 6% 18%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 270 20% 57%;
+    --chart-1: 270 20% 57%;
+    --chart-2: 42 20% 72%;
+    --chart-3: 220 14% 97%;
+    --chart-4: 240 6% 18%;
+    --chart-5: 270 30% 70%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 6% 18%;
+    --sidebar-primary: 270 20% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 240 6% 18%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 270 20% 57%;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 270 25% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 8% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 8% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 42 15% 40%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 8% 20%;
+    --input: 240 8% 20%;
+    --ring: 270 25% 65%;
+    --chart-1: 270 25% 65%;
+    --chart-2: 42 15% 40%;
+    --chart-3: 240 10% 20%;
+    --chart-4: 0 0% 98%;
+    --chart-5: 270 35% 75%;
+    --sidebar-background: 240 10% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 270 25% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 8% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 8% 20%;
+    --sidebar-ring: 270 25% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .dark .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
